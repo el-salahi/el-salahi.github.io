@@ -1,0 +1,700 @@
+ /* * GENERAL */
+
+:root {
+    --grey-blue: #22222A;
+    --light-blue: #4A4E69;
+    --green: #818F5D;
+    --pink: #C9ADA7;
+    --light-pink: #E4D2D3;
+    --cream: #F2E9E4;
+    --radish-pink: #E13358;
+    --brown: #C0A27A;
+    --cabbage-green: #1C7F1B;
+    --mint-green: #cbd3b1;
+    --cucumber-blue: #a1b9cf;
+    --parsnip-yellow: #dfbe81;
+    --burnt-orange: #a54c0c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    color: var(--cream);
+    letter-spacing: 1px;
+    /* ? Do I want scroll, or just navigation by nav bar? */
+    overflow: auto;
+    background-color: var(--light-blue);
+    width: 100vw;
+}
+
+main {
+    width: 100%;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+h1, h2 {
+    font-family: "Bebas Neue", sans-serif;
+}
+
+ /* * HEADER */
+header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--grey-blue);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.logo-circle {
+    width: 55px;
+    height: 55px;
+    background-color: var(--light-pink);
+    border-radius: 50%;
+    border: 3px solid var(--radish-pink);
+    margin: 20px
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    rotate: 40deg;
+    object-fit: contain;
+}
+
+h2 {
+    letter-spacing: 2px;
+}
+
+nav {
+    padding: 15px 30px;
+    width: 40%;
+    margin-right: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-link, .drop-heading {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 1.15em;
+    padding: 5px;
+}
+
+.nav-link:hover, .drop-heading:hover {
+    border-radius: 3px;
+    background-color: var(--pink);
+    color: var(--grey-blue);
+    font-weight: 700;
+    transition-duration: 1s;
+    cursor: pointer;
+}
+
+.drop-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(34, 34, 42, 0.7);
+    color: var(--cream);
+    transition-duration: 1s;
+}
+
+.dropdown:hover .drop-content {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5px;
+}
+
+/* * WELCOME - LAYOUT GRID*/
+#welcome {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
+    background-color: var(--pink);
+}
+
+#welcome-h1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    padding-left: 10%;
+    font-size: 12em;
+    text-align: left;
+    color: var(--green);
+    text-shadow: 1px 2px 2px var(--grey-blue), -1px -1px 1px var(--grey-blue), 4px 4px 2px var(--radish-pink), 5px 6px var(--grey-blue);
+    letter-spacing: 20px;
+    line-height: 1;
+    align-content: center;
+}
+
+#welcome-block {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    background-color: rgba(129, 143, 93, 0.7);
+    height: 70%;
+    width: 90%;
+    align-self: center;
+    justify-self: center;
+    border-radius: 5px;
+    box-shadow: 1px 2px 2px var(--grey-blue), -1px -1px 1px var(--grey-blue), 4px 4px 2px var(--radish-pink), 5px 6px var(--grey-blue);
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+}
+
+#block-h2 {
+    align-self: center;
+    font-size: 4.5em;
+    color: var(--cream);
+    text-shadow: 1px 2px 2px var(--grey-blue), 1px 1px 1px var(--light-blue);
+    text-align: center;
+    width: 100%;
+    margin: 0 10%;
+}
+
+#block-article {
+    font-size: 1.3em;
+    text-align: center;
+    width: 100%;
+    display: inline;
+    margin: 0 50px;
+}
+
+.logo.large {
+    width: 15%;
+    height: 155px;
+    display: inline;
+    align-self: flex-end;
+}
+
+#block-list {
+    display: inline;
+    text-align: left;
+    width: 70%;
+    padding-left: 20px;
+    padding-right: 50px;
+    font-size: 1.1em;
+    list-style: circle;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+
+/* * MAIN MENU - LAYOUT GRID */
+#main-menu {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 2fr 1fr 2fr 1fr 1fr 1fr;
+    gap: 5px;
+    background-color: var(--grey-blue);
+}
+
+#main-menu img {
+    grid-column: 1 / 7;
+    grid-row: 1 / 7;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+
+#main-menu h1 {
+    grid-column: 7 / -1;
+    grid-row: 1 / 2;
+    font-size: 12.5em;
+    text-align: center;
+    color: var(--green);
+    letter-spacing: 20px;
+    text-shadow: 1px 2px 2px var(--light-blue), 4px 4px 2px var(--light-pink), -2px -1px var(--grey-blue);
+}
+
+.vegetable-link {
+    font-size: 1.05em;
+    color: var(--cream);
+    text-decoration: none;
+    width: 150px;
+    align-content: center;
+    text-align: center;
+    padding: 15px;
+    border-radius: 3px;
+    transition-duration: 0.5s;
+}
+
+#radish-link {
+    grid-column: 8 / span 1;
+    grid-row: 2 / 3;
+}
+
+#cabbage-link {
+    grid-column: 9 / span 1;
+    grid-row: 2 / 3;
+}
+
+#cucumber-link {
+    grid-column: 10 / span 1;
+    grid-row: 2 / 3;
+}
+
+#parsnip-link {
+    grid-column: 11 / span 1;
+    grid-row: 2 / 3;
+}
+
+detail {
+    grid-column: 7 / -1;
+    grid-row: 3 / 5;
+    display: flex;
+    margin-top: 20px;
+    flex-flow: column nowrap;   
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+detail > h3 {
+    margin-bottom: 15px;
+}
+
+detail > p {
+    padding: 0 20%;
+}
+
+/* * #MAIN MENU SETTINGS for display*/
+
+/* ! DEFAULT - main-menu elements display */
+img.main-menu {
+    display: inline-block;
+}
+h1.main-menu, h3.main-menu, p.main-menu {
+    display: block;
+}
+
+/* ! DEFAULT - radish, cabbage, cucmber, parsnip elements hidden  */
+
+.radish, .cabbage, .cucumber, .parsnip {
+    display: none;
+}
+
+
+/* ! WHEN LINKS HOVERED  */
+
+.vegetable-link:hover {
+    font-size: 1.25em;
+    border: 1px solid var(--cream);
+    background-color: var(--green);
+}
+
+/* /* * RADISH HOVER - elements effected when link is hovered: <img> <h1> <h3> <p> * */
+main:has(#radish-link:hover) .main-menu, main:has(#radish-link:hover) .cabbage, main:has(#radish-link:hover) .cucumber, main:has(#radish-link:hover) .parsnip {
+    display: none;
+}
+main:has(#radish-link:hover) img.radish {
+    display: inline-block;
+}
+main:has(#radish-link:hover) h1.radish, main:has(#radish-link:hover) h3.radish, main:has(#radish-link:hover) p.radish{
+    display: block;
+}
+
+
+/* * CABBAGE HOVER - elements effected when link is hovered: <img> <h1> <h3> <p>*/
+main:has(#cabbage-link:hover) .main-menu, main:has(#cabbage-link:hover) .radish, main:has(#cabbage-link:hover) .cucumber, main:has(#cabbage-link:hover) .parsnip {
+    display: none;
+}
+main:has(#cabbage-link:hover) img.cabbage {
+    display: inline-block;
+}
+
+main:has(#cabbage-link:hover) h1.cabbage, main:has(#cabbage-link:hover) h3.cabbage, main:has(#cabbage-link:hover) p.cabbage {
+    display: block;  
+}
+
+/* * CUCUMBER HOVER - elements effected when link is hovered: <img> <h1> <h3> <p>*/
+main:has(#cucumber-link:hover) .main-menu, main:has(#cucumber-link:hover) .radish, main:has(#cucumber-link:hover) .cabbage, main:has(#cucumber-link:hover) .parsnip {
+    display: none;
+}
+main:has(#cucumber-link:hover) img.cucumber {
+    display: inline-block;
+}
+
+main:has(#cucumber-link:hover) h1.cucumber, main:has(#cucumber-link:hover) h3.cucumber, main:has(#cucumber-link:hover) p.cucumber {
+    display: block; 
+}
+
+/* * PARSNIP HOVER - elements effected when link is hovered: <img> <h1> <h3> <p>*/
+main:has(#parsnip-link:hover) .main-menu, main:has(#parsnip-link:hover) .radish, main:has(#parsnip-link:hover) .cabbage, main:has(#parsnip-link:hover) .cucumber {
+    display: none;
+}
+main:has(#parsnip-link:hover) img.parsnip {
+    display: inline-block;
+}
+
+main:has(#parsnip-link:hover) h1.parsnip, main:has(#parsnip-link:hover) h3.parsnip, main:has(#parsnip-link:hover) p.parsnip {
+    display: block; 
+}
+
+
+/* * PRICES  */
+
+.prices {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prices-heading {
+    font-size: 8em;
+    line-height: 1;
+    text-align: center;
+    align-content: center;
+    letter-spacing: 20px;
+}
+
+.prices-subheading {
+    font-size: 2em;
+    text-align: center;
+}
+
+.prices-description {
+    width: 60%;
+    text-align: center;
+}
+
+.wrapper {
+    width: 100%;
+    height: 60%;
+}
+
+.background-container {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    overflow: hidden;
+} 
+
+.subscription-option-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+.mask-left {
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 3%, rgba(0, 0, 0, 1) 35%);
+}
+
+.mask-right {
+    mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 3%, rgba(0, 0, 0, 1) 35%);
+}
+
+.subscription-option-tile {
+    width: 21%;
+    height: 83%;
+    background-color: rgba(74, 78, 105, 0.7);
+    padding: 25px;
+    border-radius: 5px;
+    z-index: 0;
+}
+
+.extra-bckgrd {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(74, 78, 105, 0.8);
+    border-radius: 4px;
+    border: 2px solid var(--cream);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+}
+
+.tile-h2 {
+    text-align: center;
+}
+
+.tile-description {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.tile-price {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between; 
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.bold {
+    font-weight: 600;
+    font-size: 1.2em;
+    margin: 5px;
+}
+
+
+/* TODO input taken out on main-menu section - to be added to price pages */
+
+/* input {
+    width: 45%;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-color: var(--pink);
+    box-shadow: 1px 1px 2px var(--light-blue), -1px -1px 2px var(--light-blue);
+} */
+
+
+/* *RADISH PRICE  */
+
+#radish-price {
+    background-color: var(--green);
+}
+#radish-heading {
+    color: var(--light-pink);
+    text-shadow: 1px 2px 2px var(--light-blue), 4px 4px 2px var(--radish-pink), -2px -1px var(--grey-blue);
+}
+
+#radish-background-container {
+    background-image: url(assets/radish-rotate.jpg);
+    background-position: 0% 50%
+}
+
+/* *CABBAGE PRICE  */
+
+#cabbage-price {
+    background-color: var(--brown);
+}
+#cabbage-heading {
+    color: var(--cabbage-green);
+    text-shadow: 1px 2px 2px var(--grey-blue), 4px 4px 2px var(--burnt-orange), -2px -1px var(--grey-blue);
+}
+
+#cabbage-background-container {
+    background-image: url("assets/Cabbage-rotate.jpg");
+    /* background-position: 200% 50%; */
+}
+
+/* *CUCUMBER PRICE  */
+
+#cucumber-price {
+    background-color: var(--cucumber-blue);
+}
+#cucumber-heading {
+    color:var(--mint-green);
+    text-shadow: 1px 2px 2px var(--cabbage-green), 4px 4px 2px var(--light-blue), -2px -1px var(--grey-blue);
+}
+
+#cucumber-background-container {
+    background-image: url("https://static01.nyt.com/images/2019/01/15/dining/mrs-cucumber-salad-with-soy-ginger-and-garlic/mrs-cucumber-salad-with-soy-ginger-and-garlic-superJumbo.jpg");
+}
+
+/* *PARSNIP PRICE */
+
+#parsnip-price {
+    background-color: var(--parsnip-yellow);
+}
+#parsnip-heading {
+    color: var(--cream);
+    text-shadow: 1px 2px 2px var(--brown), 4px 4px 2px var(--burnt-orange), -2px -1px var(--grey-blue);
+}
+
+#parsnip-background-container {
+    background-image: url("https://assets.bonappetit.com/photos/5bc1017060f9282c89837823/4:3/w_1832,h_1374,c_limit/parsnip-confit-with-pickled-currants.jpg");
+    background-position: 110% 50%;
+}
+
+/* * FOOTER */
+footer {
+    width: 100%;
+    height: 50px;
+    background-color: var(--light-blue);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    
+}
+.socials {
+    display: inline;
+    width: 15%;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    
+}
+.fab {
+    padding: 6px;
+    text-align: center;
+    margin-left: 5%;
+    border-radius: 50%;
+    background-color: var(--grey-blue);
+    color: var(--pink);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    border: 2px solid var(--pink);
+}
+.fab:hover {
+    background-color: var(--light-pink);
+    border: 3px solid var(--radish-pink);
+    color: var(--grey-blue);
+    transition-duration: 0.5s;
+}
+
+
+/* TODO Add media queries with appropriate break points to sections - Main menu & Prices. Add mobile breakpoint - 320-480px*/
+
+@media (max-width: 1200px) {
+    /* *HEADER */
+    header {
+        background-color: var(--burnt-orange);
+    }
+    /* * WELCOME */
+    #welcome h1 {
+        letter-spacing: 10px;
+    }
+    #welcome-block {
+        justify-self: left;
+    }
+    #block-h2 {
+        margin: 0 5%;
+    }
+    #block-article {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 1025px) {
+    /* * HEADER */
+    header {
+        background-color: var(--parsnip-yellow);
+    }
+    nav {
+        width: 50%;
+    }
+    /* * WELCOME */
+    #welcome {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+    }
+    #welcome h1 {
+        font-size: 9.5em;
+        letter-spacing: 5px;
+        text-align: center;
+        padding: 0;
+        margin: 0 65px;
+    }
+    #welcome-block {
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+        width: 75%;
+        height: 40%;
+    }
+    #block-h2 {
+        font-size: 2.6em;
+    }
+    #block-article {
+        font-size: 1.2em;
+        margin: 10px 5px;
+    }
+    .logo.large {
+        position: absolute;
+        left: 9%;
+        top: 240px;
+        width: 140px;
+    }
+    #block-list {
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin: 0 40px;
+        font-size: 1em;
+    }
+}
+
+ /* ? Problem with width. Scrolls further than vw when it hits approx. 768px wide. Body width: 100vw > Main width: 100% > Section width: 100% */
+
+
+@media (max-width: 768px) {
+    /* *HEADER */
+    header {
+        background-color: var(--cucumber-blue);
+    }
+    h2 {
+        letter-spacing: 1px;
+        width: 100px;
+    }
+    nav {
+        margin-right: 0px;
+        width: 60%;
+    }   
+    .nav-link, .drop-heading {
+        font-size: 1em;
+    }
+    /* * WELCOME */
+    #welcome {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+    }
+    #welcome h1 {
+        font-size: 7em;
+        margin-top: 10px;
+        min-width: 400px;
+        margin-bottom: 20px;
+    }
+    .logo.large {
+        height: 90px;
+        width: 80px;
+        top: 200px;
+    }
+    #welcome-block {
+        height: 45%;
+    }
+    #block-h2 {
+        font-size: 2em;
+    }
+    #block-article {
+        font-size: 1em;
+    }
+    #block-list {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    /* *HEADER */
+    header {
+        background-color: var(--cabbage-green);
+    }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script defer src="script.js"></script>
+    <title>JavaScript Assignment - Pokedex</title>
+</head>
+<body>
+    <h1>POKEDEX</h1>
+    <p id="greeting" class="welcomeMessage">Greetings Pokemon trainer, welcome to your new Pokedex</p>
+    <div id="pokedexContainer">
+        <div id="boxLeft" class="box">
+            <div id="topPanelContainer" class="topPanel">
+                <div id="topPanel">
+                    <div id="onLight"></div>
+                    <div id="redLight" class="panelLight"></div>
+                    <div id="yellowLight" class="panelLight"></div>
+                    <div id="greenLight" class="panelLight"></div>
+                </div>
+                <div id="curve"></div>
+                <div id="topPanelCont"></div>
+            </div>
+            <div id="imgScreenContainer">
+                <div id="screenLightContainer">
+                    <div class="scrnLight"></div>
+                    <div class="scrnLight"></div>
+                </div>
+                <div id="screenOutput"></div>
+                <div id="screenDecorContainer">
+                    <div id="scrnDecbtn"></div>
+                    <div id="scrnDecLines">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="buttonPanel">
+                <div id="goContainer">
+                    <button id="onBtn" class="btn">ON</button>
+                </div>
+                <div id="homeContainer">
+                    <div class="slimBtn right"></div>
+                    <div class="slimBtn left"></div>
+                    <button id="homeBtn" class="material-icons btn">home</button>
+                </div>
+                <div id="dPadContainer">
+                    <div class="dPadSqu One"></div>
+                    <button id="leftBtn" class="dPadSqu Two btn">L</button>
+                    <div class="dPadSqu Three"></div>
+                    <button id="rightBtn" class="dPadSqu Four btn" value="R">R</button>
+                    <div class="dPadSqu Five"></div>
+                </div>
+            </div>
+        </div>
+        <div id="boxRight" class="box">
+            <div class="topPanel"></div>
+            <div id="flexContentContainer">
+                <div id="textOutputContainer">
+                    <p id="textOutput"></p>
+                </div>
+                <div id="keyboardContainer">
+                    <button id="keyQ" class="keySqu Q" value="q">q</button>
+                    <button id="keyW" class="keySqu W" value="w">w</button>
+                    <button id="keyE" class="keySqu E" value="e">e</button>
+                    <button id="keyR" class="keySqu R" value="r">r</button>
+                    <button id="keyT" class="keySqu T" value="t">t</button>
+                    <button id="keyY" class="keySqu Y" value="y">y</button>
+                    <button id="keyU" class="keySqu U" value="u">u</button>
+                    <button id="keyI" class="keySqu I" value="i">i</button>
+                    <button id="keyO" class="keySqu O" value="o">o</button>
+                    <button id="keyP" class="keySqu P" value="p">p</button>
+                    <div id="Row2" class="indentHalfKey"></div>
+                    <button id="keyA" class="keySqu A" value="a">a</button>
+                    <button id="keyS" class="keySqu S" value="s">s</button>
+                    <button id="keyD" class="keySqu D" value="d">d</button>
+                    <button id="keyF" class="keySqu F" value="f">f</button>
+                    <button id="keyG" class="keySqu G" value="g">g</button>
+                    <button id="keyH" class="keySqu H" value="h">h</button>
+                    <button id="keyJ" class="keySqu J" value="j">j</button>
+                    <button id="keyK" class="keySqu K" value="k">k</button>
+                    <button id="keyL" class="keySqu L" value="l">l</button>
+                    <div id="Row3" class="indentWholeKey"></div>
+                    <button id="keyZ" class="keySqu Z" value="z">z</button>
+                    <button id="keyX" class="keySqu X" value="x">x</button>
+                    <button id="keyC" class="keySqu C" value="c">c</button>
+                    <button id="keyV" class="keySqu V" value="v">v</button>
+                    <button id="keyB" class="keySqu B" value="b">b</button>
+                    <button id="keyN" class="keySqu N" value="n">n</button>
+                    <button id="keyM" class="keySqu M" value="m">m</button>
+                    <button id="backSpace" class="keySqu material-icons">backspace</button>
+                </div>
+                <div id="decorationStuff"></div>
+                <div id="navBtnContainer">
+                <button id="enterBtn" class="navBtn btn">ENTER</button>
+                <button id="clearBtn" class="navBtn btn">CLEAR</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <p id="start" class="welcomeMessage">Turn your Pokedex on via the ON button to start your journey...</p>
+</body>
+</html>
